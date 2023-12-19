@@ -1,0 +1,16 @@
+<?php
+include "koneksi.php";
+$nama = $_POST['nama'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$insert = $conn->query("INSERT tbl_users (nama, email, password) VALUES ('$nama', '$email', '$password')");
+
+if ($insert) {
+    echo "Berhasil Disimpan";
+    header('Location: formdaftar.php');
+} else {
+    echo "Gagal Disimpan";
+}
+
+?>
